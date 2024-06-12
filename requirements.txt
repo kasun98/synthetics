@@ -1,0 +1,16 @@
+Flask
+keras
+matplotlib
+numpy
+statsmodels
+pmdarima
+pandas
+pandas_datareader
+nbformat
+plotly
+Requests
+scikit_learn
+seaborn
+tensorflow
+xgboost
+load_dotenv
