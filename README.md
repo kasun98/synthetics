@@ -1,4 +1,4 @@
-# Predicting Synthetic Trading Pair Prices
+# Predicting Synthetic Trades
 
 This project aims to predict whether the current price of Deriv broker's synthetic trading pairs (Boom 500, Boom 1000, Crash 500, Crash 1000) is good for a trade (1 or 0) using various machine learning models. The models were trained and tested on data extracted from MetaTrader 5.
 
