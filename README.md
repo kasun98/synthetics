@@ -1,42 +1,43 @@
-# Predicting Synthetic Trades
+# Groupz - Real-Time AI Chat Ecosystem
 
-This project aims to predict whether the current price of Deriv broker's synthetic trading pairs (Boom 500, Boom 1000, Crash 500, Crash 1000) is good for a trade (1 or 0) using various machine learning models. The models were trained and tested on data extracted from MetaTrader 5.
+![Groupz Header](https://res.cloudinary.com/dlb65j6di/image/upload/v1721924193/groupz_header.png)
 
-## Project Overview
+Groupz is a sophisticated real-time communication platform built with Django. It bridges the gap between traditional messaging and modern AI, allowing users to interact with advanced Large Language Models (LLMs) directly within their group conversations.
 
-In this project, I explored the impact of different data preprocessing techniques on the performance of XGBoost and k-Nearest Neighbors (KNN) classifiers. The preprocessing techniques included using raw price data, log-transformed data, sine-transformed data, and standard-scaled data.
+## Features
 
-### Data Preparation
+*   **User Authentication**: Secure registration and login system for a personalized experience.
+*   **Private & Group Messaging**: Seamless direct chats and robust group management features.
+*   **AI Integration**: Mention `@gemini` or `@llama3` in any group chat to trigger real-time AI responses powered by the Groq inference engine.
+*   **Real-time Synchronization**: Utilizing WebSockets for instantaneous message delivery and status updates.
+*   **Admin Controls**: Group creators can manage memberships and moderate threads effectively.
 
-- **Data Source**: Price data for 10 synthetic charts from MetaTrader 5.
-- **Features**: 60 features representing various price attributes.
-- **Targets**: Binary classification targets for Boom 500, Boom 1000, Crash 500, and Crash 1000 trading indices.
+## Technical Architecture
 
-### Preprocessing Techniques
+The platform is designed for high concurrency and low latency, utilizing an asynchronous backend stack.
 
-1. **Raw Data**: Original price data without any scaling.
-2. **Log Transformation**: Natural logarithm of the price data.
-3. **Sine Transformation**: Sine of the price data.
-4. **Standard Scaling**: Standard scaling of the price data.
+![Groupz UI Interface](https://res.cloudinary.com/dlb65j6di/image/upload/v1721924193/groupz_ui.png)
 
-### Models Used
+### Backend & AI Logic
+*   **Framework**: Python & Django (utilizing Channels and ASGI for asynchronous support).
+*   **Inference**: Groq (Llama3 8B) and Google Generative AI for intelligent group interactions.
+*   **State Management**: Redis serves as the backing store for WebSockets and caching.
 
-- **XGBoost**: Extreme Gradient Boosting classifier.
-- **k-Nearest Neighbors (KNN)**: k-NN classifier.
+### Infrastructure
+*   **Database**: PostgreSQL for persistent user and message data.
+*   **Deployment**: Hosted on Render using a containerized environment to ensure scalability.
 
-## Experiments and Results
+## Development Stack
 
-For each preprocessing technique, both XGBoost and KNN models were trained and evaluated. The performance was measured using accuracy and ROC-AUC scores.
+*   **Languages**: Python, JavaScript
+*   **Backend**: Django, Channels, Daphne, Redis
+*   **Frontend**: HTML5, CSS3, Bootstrap 5
+*   **AI**: LangChain, Groq API, Google Gemini API
 
+## Repository
 
-### Key Insights
+The full source code and deployment instructions are available on GitHub:
+[GitHub - Groupz Chat App](https://github.com/kasun98/Groupz)
 
-- **Log Transformation**: Significantly improved the performance of the KNN model.
-- **Standard Scaling**: Provided a balanced performance for both models.
-- **Raw Data**: XGBoost and KNN models performed reasonably well with raw data.
-- **Sine Transformation**: Resulted in lower performance compared to other transformations.
-
-## Conclusion
-
-This project demonstrates the importance of data preprocessing in binary classification tasks for financial market insights. By experimenting with various approaches, identified that log transformation and standard scaling can enhance the accuracy of predictions.
-
+---
+© 2025 | Groupz - AI Integrated Messaging
